@@ -1,8 +1,0 @@
-angular.module('app', ['ngResource', 'ngRoute',   'ngProgress'])
-  .config(function($routeProvider, $locationProvider) {
-	$routeProvider
-      .when('/', {
-        templateUrl: '/partials/admin.html',
-        controller: 'AppCtrl'
-      })
-  });

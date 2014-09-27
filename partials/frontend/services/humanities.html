@@ -1,0 +1,40 @@
+<div class="content-what" data-ng-controller="humanitiesController">
+	<div class="container">
+		<div style="margin-bottom: -80px;" class="content-we">
+			
+			<div class="face">
+			<h2><span class="we-are"> </span>
+			HUMANITIES</h2>
+				<ul>
+					<li><a class="facebook" href="#"><span> </span></a></li>
+					<li><a class="twitter"href="#"><span> </span></a></li>
+					<li><a class="gmail"href="#"><span> </span></a></li>
+					<div class="clearfix"> </div>
+				</ul>
+			</div>
+		</div>
+		<div ng-repeat="list in article_list">
+			<div class="row">
+			  <div class="col-md-12">
+			    <h2>{{list.title}}</h2>	
+			    </br>
+			    <div class="row">
+			      <div class="col-md-2">
+					<img class="img-responsive" ng-src="{{list.image_link}}" alt=""/>        
+			      </div>
+			      <div class="col-md-4">
+			        <iframe width="350" height="200" ng-src="{{trustSrc(list.video_link)}}" frameborder="0" allowfullscreen></iframe>
+			      </div>
+			            <div class="col-md-6 para-matter overflowY">
+					        <p class="sit">{{list.content}}</p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<hr class="style-four">
+			</br>
+		</div>
+
+
+	</div>
+</div>

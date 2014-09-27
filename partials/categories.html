@@ -1,0 +1,31 @@
+<!-- <div class="row">
+	<i class="fa fa-home fa-3x"></i>
+</div> -->
+<aside id="sidebar" class="column" data-ng-controller="navCtrl">
+	<h3>Content</h3>
+	<ul class="toggle">
+		<li class="icn_new_article"><a href="#/dashboard">New Article</a></li>
+		<li class="icn_edit_article"><a href="#/list-articles">Edit Articles</a></li>
+		<li class="icn_categories"><a href="#/categories">Categories</a></li>
+	</ul>
+	<h3>Admin</h3>
+	<ul class="toggle">
+		<li class="icn_settings"><a href="#">Options</a></li>
+		<li class="icn_security"><a href="#">Security</a></li>
+		<li class="icn_jump_back"><a href="" ng-click="logout()">Logout</a></li>
+	</ul>
+	
+	<footer>
+		<hr />
+		<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
+	</footer>
+</aside><!-- end of sidebar -->
+<section id="main" class="column" data-ng-controller="categoriesCtrl">
+	<form ng-submit="newArticle()" name="uploadForm" enctype="multipart/form-data">
+		<article class="module width_full">
+			<header><h3>Category List</h3></header>
+
+
+		</article><!-- end of post new article -->
+	</form>
+</section>

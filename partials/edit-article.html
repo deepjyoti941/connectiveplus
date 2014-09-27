@@ -1,0 +1,78 @@
+<aside id="sidebar" style="margin-top:1.5%" class="column" data-ng-controller="navCtrl">
+	<h3>Content</h3>
+	<ul class="toggle">
+		<li class="icn_settings"><a href="#/dashboard">Dashboard</a></li>
+		<li class="icn_new_article"><a href="#/new-article">New Article</a></li>
+	</ul>
+	<h3>Admin</h3>
+	<ul class="toggle">
+<!-- 		<li class="icn_settings"><a href="#">Options</a></li>
+		<li class="icn_security"><a href="#">Security</a></li> -->
+		<li class="icn_jump_back"><a href="" ng-click="logout()">Logout</a></li>
+	</ul>
+	
+	<footer>
+		<hr />
+		<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
+	</footer>
+</aside>
+<section id="main" class="column" data-ng-controller="editArticleCtrl">
+	<form ng-submit="uploadFile()" name="uploadForm">
+		<article class="module width_full">
+			<header><h3>Update Article</h3></header>
+				<div class="module_content">
+						<fieldset style="width:48%; float:left; margin-right: 3%;"> <!-- to make two field float next to one another, adjust values accordingly -->
+							<label>Category</label>
+							<select style="margin-top: 20px;" name="category"  ng-model="model.category_id" required>
+			                	<option value="">Select Category Type</option>
+			                	<option value="1">Engineering</option>
+			                	<option value="2">Humanities</option>
+			                	<option value="3">General Science</option>
+			                	<option value="4">Commerce</option>
+			                	<option value="5">Medical</option>
+			                	<option value="6">Law</option>
+			                	<option value="7">Performing Arts</option>
+			                	<option value="8">Fine Arts</option>
+			                </select>
+						</fieldset>
+						<div class="clear"></div>
+						<fieldset>
+							<label>Post Title</label>
+							<input type="text" name="post_title" ng-model="model.title" required>
+						</fieldset>
+						<fieldset>
+							<label>Content</label>
+							<textarea name="post_content" ng-model="model.content" rows="12" required></textarea>
+						</fieldset>
+
+						<fieldset style=""> <!-- to make two field float next to one another, adjust values accordingly -->
+							<label>Image</label></br></br>
+								<div ng-if="model.image_link =='' ">
+									<p style="margin-left: 2%;">No image for this Article</p>	
+								</div>
+								<div ng-if="model.image_link !=''">
+									<img style="margin-left: 2%;" ng-src="{{model.image_link}}">
+								</div>
+							<input style="margin-left: 2%;" name="articleImage" type="file" id="articleImage" ng-file-select="onFileSelect($files)" />							
+
+							
+						</fieldset>
+						<fieldset style=""> <!-- to make two field float next to one another, adjust values accordingly -->
+							<label>Video Link</label></br></br>
+								<div ng-if="model.video_link =='' ">
+									<p style="margin-left: 2%;">No Video link for this Article</p>	
+								</div>
+								<div ng-if="model.video_link !=''">
+									<iframe style="margin-left: 2%;" width="350" height="200" ng-src="{{trustSrc(model.video_link)}}" frameborder="0" allowfullscreen></iframe>								
+								</div>
+							<input name="videoLink" type="text" ng-model="model.video_link"/>
+						</fieldset><div class="clear"></div>
+				</div>
+			<footer>
+				<div class="submit_link">
+					<input type="submit" value="Update" class="alt_btn">
+				</div>
+			</footer>
+		</article><!-- end of post new article -->
+	</form>
+</section>
